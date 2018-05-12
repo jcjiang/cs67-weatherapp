@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+    <string name="weatherboston">weatherBoston</string>
+    <string name="weatherhanover">weatherHanover</string>
 </resources>

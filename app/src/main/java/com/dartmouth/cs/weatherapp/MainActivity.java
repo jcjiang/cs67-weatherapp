@@ -4,8 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-
+import android.view.Menu;
+import android.view.MenuItem;
+import android.content.Intent;
+import android.support.v7.widget.Toolbar;
 
 import com.dartmouth.cs.weatherapp.WeatherHomeFragment;
 import com.dartmouth.cs.weatherapp.SearchFragment;
@@ -35,6 +37,26 @@ public class MainActivity extends AppCompatActivity {
         fragments.add(new WeatherBostonFragment());
 
 
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == R.id.action_settings) {
+            Intent intent = new Intent(this, PreferencesActivity.class);
+            startActivity(intent);
+        }
+
+        return(super.onOptionsItemSelected(item));
     }
 }
