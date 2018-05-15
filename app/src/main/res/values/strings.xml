@@ -2,5 +2,7 @@
     <string name="app_name">WeatherApp</string>
     <string name="weatherboston">weatherBoston</string>
     <string name="weatherhanover">weatherHanover</string>
-    <string name="search_hint">search more places</string>
+    <string name="daily">daily</string>
+    <string name="title">title</string>
+
 </resources>

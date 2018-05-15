@@ -14,7 +14,6 @@ import android.view.MenuInflater;
  */
 
 public class SearchFragment extends Fragment {
-    String[] places = {"Boston", "New York", "Hanover", "Lebanon", "Enfield"};
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_search, container, false);
@@ -23,7 +22,6 @@ public class SearchFragment extends Fragment {
         imageViewHanover.setImageResource(R.drawable.weather_hanover);
         ImageView imageViewBoston=(ImageView) rootView.findViewById(R.id.weatherBoston); //cat image
         imageViewBoston.setImageResource(R.drawable.weather_boston);
-
 
 
         return rootView;
