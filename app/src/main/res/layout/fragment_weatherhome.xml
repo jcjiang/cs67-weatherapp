@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@drawable/background">
 
     <ImageView
@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:contentDescription="@string/title"
-        android:visibility="visible"
-        android:layout_alignParentTop="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
 
     <ImageView
         android:id="@+id/daily"
@@ -21,7 +21,28 @@
         android:layout_gravity="center"
         android:contentDescription="@string/daily"
         android:visibility="visible"
-        android:layout_alignParentTop="true"/>
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
 
+    <ImageView
+        android:id="@+id/hourly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="@string/info"
+        android:layout_below="@+id/daily"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:id="@+id/sun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="@string/info"
+        android:layout_below="@+id/hourly"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
 
 </RelativeLayout>

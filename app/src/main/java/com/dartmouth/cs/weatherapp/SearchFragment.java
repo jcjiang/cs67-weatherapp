@@ -18,9 +18,9 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_search, container, false);
 
-        ImageView imageViewHanover=(ImageView) rootView.findViewById(R.id.weatherHanover); //cat image
+        ImageView imageViewHanover=(ImageView) rootView.findViewById(R.id.search_hanover); //cat image
         imageViewHanover.setImageResource(R.drawable.weather_hanover);
-        ImageView imageViewBoston=(ImageView) rootView.findViewById(R.id.weatherBoston); //cat image
+        ImageView imageViewBoston=(ImageView) rootView.findViewById(R.id.search_boston); //cat image
         imageViewBoston.setImageResource(R.drawable.weather_boston);
 
 

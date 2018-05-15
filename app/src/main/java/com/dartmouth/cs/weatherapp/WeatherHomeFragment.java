@@ -19,13 +19,17 @@ public class WeatherHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_weatherhome, container, false);
 
-        ImageView title=(ImageView) rootView.findViewById(R.id.title); //cat image
-        title.setImageResource(R.drawable.weather);
+        ImageView title=(ImageView) rootView.findViewById(R.id.title); // image
+        title.setImageResource(R.drawable.main_hanover);
 
-        ImageView daily=(ImageView) rootView.findViewById(R.id.daily); //cat image
+        ImageView daily=(ImageView) rootView.findViewById(R.id.daily); // image
         daily.setImageResource(R.drawable.main_daily);
 
+        ImageView hourly=(ImageView) rootView.findViewById(R.id.hourly); //image
+        hourly.setImageResource(R.drawable.main_hourly);
 
+        ImageView sun=(ImageView) rootView.findViewById(R.id.sun); // image
+        sun.setImageResource(R.drawable.main_sun);
 
 
 

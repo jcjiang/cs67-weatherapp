@@ -4,5 +4,7 @@
     <string name="weatherhanover">weatherHanover</string>
     <string name="daily">daily</string>
     <string name="title">title</string>
+    <string name="info">weather info</string>
+
 
 </resources>

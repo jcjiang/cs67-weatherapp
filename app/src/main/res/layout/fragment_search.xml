@@ -2,35 +2,31 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/background"
     >
 
-    <!--<ImageView-->
-        <!--android:id="@+id/weatherfun"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="top"-->
-        <!--android:contentDescription="@string/weatherhanover"-->
-        <!--android:scaleType="center"-->
-        <!--android:layout_alignParentTop="true"/>-->
 
     <ImageView
-        android:id="@+id/weatherBoston"
+        android:id="@+id/search_boston"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:contentDescription="@string/weatherboston"
         android:visibility="visible"
-        android:layout_alignParentBottom="true"/>
+        android:layout_centerVertical="true"
+        android:layout_marginTop="80dp"
+        android:padding="10dp"/>
 
     <ImageView
-        android:id="@+id/weatherHanover"
+        android:id="@+id/search_hanover"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignBottom="@+id/weatherBoston"
+        android:layout_alignBottom="@+id/search_boston"
         android:layout_gravity="top"
-        android:layout_toEndOf="@+id/weatherBoston"
-        android:layout_toRightOf="@+id/weatherBoston"
+        android:layout_toEndOf="@+id/search_boston"
+        android:layout_toRightOf="@+id/search_boston"
         android:adjustViewBounds="true"
+        android:layout_centerVertical="true"
         android:contentDescription="@string/weatherhanover"
         android:cropToPadding="true"
         android:scaleType="center" />
