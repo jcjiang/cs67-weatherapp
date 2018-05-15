@@ -49,14 +49,5 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
 
-        if (item.getItemId() == R.id.action_settings) {
-            Intent intent = new Intent(this, PreferencesActivity.class);
-            startActivity(intent);
-        }
-
-        return(super.onOptionsItemSelected(item));
-    }
 }

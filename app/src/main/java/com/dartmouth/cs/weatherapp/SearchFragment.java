@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 /**
  * Created by acaciah on 5/11/18.
@@ -13,7 +15,6 @@ import android.widget.ImageView;
 
 public class SearchFragment extends Fragment {
     String[] places = {"Boston", "New York", "Hanover", "Lebanon", "Enfield"};
-
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_search, container, false);
@@ -27,6 +28,7 @@ public class SearchFragment extends Fragment {
 
         return rootView;
     }
+
 
 }
 
