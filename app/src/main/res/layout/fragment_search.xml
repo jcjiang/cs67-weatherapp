@@ -7,33 +7,46 @@
 
 
     <ImageView
-        android:id="@+id/search_boston"
+        android:id="@+id/search_hanover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:contentDescription="@string/weatherboston"
+        android:contentDescription="@string/weatherhanover"
         android:visibility="visible"
-        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
-        android:padding="10dp"/>
+        />
 
     <ImageView
-        android:id="@+id/search_hanover"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignBottom="@+id/search_boston"
-        android:layout_gravity="top"
-        android:layout_toEndOf="@+id/search_boston"
-        android:layout_toRightOf="@+id/search_boston"
-        android:adjustViewBounds="true"
-        android:layout_centerVertical="true"
+        android:id="@+id/search_boston"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_hanover"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
         android:contentDescription="@string/weatherhanover"
-        android:cropToPadding="true"
-        android:scaleType="center" />
+        />
 
-    <!--<searchable xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--android:label="@string/app_label"-->
-    <!--android:hint="@string/search_hint" >-->
-    <!--</searchable>-->
+    <ImageView
+        android:id="@+id/cf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_boston"
+        android:layout_alignLeft="@id/search_boston"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <ImageView
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_boston"
+        android:layout_alignRight="@id/search_boston"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        />
+
+
 
 </RelativeLayout>
