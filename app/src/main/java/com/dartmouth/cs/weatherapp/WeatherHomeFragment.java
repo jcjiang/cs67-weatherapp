@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ImageButton;
-import android.view.View;
 import android.view.View.OnClickListener;
 import android.content.Intent;
 
@@ -17,7 +16,10 @@ import android.content.Intent;
 
 public class WeatherHomeFragment extends Fragment {
 
+    private ImageButton hourly;
+    private ImageButton daily;
     private ImageButton add_button;
+    private Boolean hourly_expanded = false;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_weatherhome, container, false);
@@ -25,14 +27,37 @@ public class WeatherHomeFragment extends Fragment {
         ImageView title=(ImageView) rootView.findViewById(R.id.title); // image
         title.setImageResource(R.drawable.main_title_hanover);
 
-        ImageView daily=(ImageView) rootView.findViewById(R.id.daily); // image
+        daily=(ImageButton) rootView.findViewById(R.id.daily); //image
         daily.setImageResource(R.drawable.main_daily_hanover);
+        daily.setAdjustViewBounds(true);
 
-        ImageView hourly=(ImageView) rootView.findViewById(R.id.hourly); //image
-        hourly.setImageResource(R.drawable.main_hourly_hanover);
+//        ImageView daily=(ImageView) rootView.findViewById(R.id.daily); // image
+//        daily.setImageResource(R.drawable.main_daily_hanover);
 
         ImageView sun=(ImageView) rootView.findViewById(R.id.sun); // image
-        sun.setImageResource(R.drawable.main_sun_hanover);
+        sun.setImageResource(R.drawable.main_sun);
+
+//        ImageView hourly=(ImageView) rootView.findViewById(R.id.hourly); //image
+//        hourly.setImageResource(R.drawable.main_hourly_hanover);
+        hourly=(ImageButton) rootView.findViewById(R.id.hourly); //image
+        hourly.setImageResource(R.drawable.main_hourly_hanover);
+        hourly.setAdjustViewBounds(true);
+
+        hourly.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                if (!hourly_expanded){
+                    hourly.setImageResource(R.drawable.main_hourly_expanded_hanover);
+                } else{
+                    hourly.setImageResource(R.drawable.main_hourly_hanover);
+                }
+                hourly.setAdjustViewBounds(true);
+                hourly_expanded=!hourly_expanded;
+            }
+
+        });
+
 
         add_button = (ImageButton) rootView.findViewById(R.id.add_button);
 
@@ -40,10 +65,8 @@ public class WeatherHomeFragment extends Fragment {
 
             @Override
             public void onClick(View view) {
-
                 Intent i = new Intent(view.getContext(), AddTilesActivity.class);
                 startActivity(i);
-
             }
 
         });
