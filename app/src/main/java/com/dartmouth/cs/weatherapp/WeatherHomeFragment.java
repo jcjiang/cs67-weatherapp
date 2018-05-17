@@ -82,12 +82,16 @@ public class WeatherHomeFragment extends Fragment {
 
         });
 
+        clothing= rootView.findViewById(R.id.home_clothing); //image
         radar= rootView.findViewById(R.id.home_radar); //image
+        air= rootView.findViewById(R.id.home_air); //image
 
         if (addedTiles != null ){
             // add custom tiles
             if (addedTiles.containsKey("clothing")){
                 Log.d("weatherhomefrag", "clothing");
+                clothing.setImageResource(R.drawable.tiles_clothing);
+                clothing.setAdjustViewBounds(true);
             }
             if (addedTiles.containsKey("radar")) {
                 Log.d("weatherhomefrag", "radar");
@@ -96,6 +100,8 @@ public class WeatherHomeFragment extends Fragment {
             }
             if (addedTiles.containsKey("air")) {
                 Log.d("weatherhomefrag", "air");
+                air.setImageResource(R.drawable.tiles_air);
+                air.setAdjustViewBounds(true);
 
             }
         }
