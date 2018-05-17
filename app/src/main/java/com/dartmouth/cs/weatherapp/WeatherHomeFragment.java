@@ -22,6 +22,7 @@ public class WeatherHomeFragment extends Fragment {
     private ImageButton daily;
     private ImageButton add_button;
     private Boolean hourly_expanded = false;
+    private Boolean daily_expanded = false;
 
     private ImageView clothing, radar, air;
     private Boolean radar_expanded = false;
@@ -35,22 +36,32 @@ public class WeatherHomeFragment extends Fragment {
         MainActivity activity = (MainActivity) getActivity();
         addedTiles = activity.homeAddedTiles;
 
-        ImageView title=(ImageView) rootView.findViewById(R.id.title); // image
+        ImageView title = (ImageView) rootView.findViewById(R.id.title); // image
         title.setImageResource(R.drawable.main_title_hanover);
 
-        daily=(ImageButton) rootView.findViewById(R.id.daily); //image
+        daily = (ImageButton) rootView.findViewById(R.id.daily); //image
         daily.setImageResource(R.drawable.main_daily_hanover);
         daily.setAdjustViewBounds(true);
 
-//        ImageView daily=(ImageView) rootView.findViewById(R.id.daily); // image
-//        daily.setImageResource(R.drawable.main_daily_hanover);
+        daily.setOnClickListener(new OnClickListener() {
 
-        ImageView sun=(ImageView) rootView.findViewById(R.id.sun); // image
+            @Override
+            public void onClick(View view) {
+                if (!daily_expanded) {
+                    daily.setImageResource(R.drawable.main_daily_expanded_hanover);
+
+                } else {
+                    daily.setImageResource(R.drawable.main_daily_hanover);
+                }
+                daily.setAdjustViewBounds(true);
+                daily_expanded = !daily_expanded;
+            }
+        });
+
+        ImageView sun = (ImageView) rootView.findViewById(R.id.sun); // image
         sun.setImageResource(R.drawable.main_sun);
 
-//        ImageView hourly=(ImageView) rootView.findViewById(R.id.hourly); //image
-//        hourly.setImageResource(R.drawable.main_hourly_hanover);
-        hourly=(ImageButton) rootView.findViewById(R.id.hourly); //image
+        hourly = (ImageButton) rootView.findViewById(R.id.hourly); //image
         hourly.setImageResource(R.drawable.main_hourly_hanover);
         hourly.setAdjustViewBounds(true);
 
@@ -58,13 +69,13 @@ public class WeatherHomeFragment extends Fragment {
 
             @Override
             public void onClick(View view) {
-                if (!hourly_expanded){
+                if (!hourly_expanded) {
                     hourly.setImageResource(R.drawable.main_hourly_expanded_hanover);
-                } else{
+                } else {
                     hourly.setImageResource(R.drawable.main_hourly_hanover);
                 }
                 hourly.setAdjustViewBounds(true);
-                hourly_expanded=!hourly_expanded;
+                hourly_expanded = !hourly_expanded;
             }
 
         });
@@ -83,14 +94,14 @@ public class WeatherHomeFragment extends Fragment {
 
         });
 
-        clothing= rootView.findViewById(R.id.home_clothing); //image
-        radar= rootView.findViewById(R.id.home_radar); //image
-        air= rootView.findViewById(R.id.home_air); //image
+        clothing = rootView.findViewById(R.id.home_clothing); //image
+        radar = rootView.findViewById(R.id.home_radar); //image
+        air = rootView.findViewById(R.id.home_air); //image
 
 
-        if (addedTiles != null ){
+        if (addedTiles != null) {
             // add custom tiles
-            if (addedTiles.containsKey("clothing")){
+            if (addedTiles.containsKey("clothing")) {
                 Log.d("weatherhomefrag", "clothing");
                 clothing.setImageResource(R.drawable.main_clothing);
                 clothing.setAdjustViewBounds(true);
@@ -104,19 +115,18 @@ public class WeatherHomeFragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         Log.d("", "radar onclick");
-                        if (!radar_expanded){
+                        if (!radar_expanded) {
                             Log.d("", "radar onclick not expanded");
                             radar.setImageResource(R.drawable.main_radar_expanded);
-                        } else{
+                        } else {
                             Log.d("", "radar onclick expanded");
                             radar.setImageResource(R.drawable.main_radar);
                         }
                         radar.setAdjustViewBounds(true);
-                        radar_expanded=!radar_expanded;
+                        radar_expanded = !radar_expanded;
                     }
 
                 });
-
 
 
             }
@@ -130,6 +140,5 @@ public class WeatherHomeFragment extends Fragment {
 
         return rootView;
     }
-
 
 }
