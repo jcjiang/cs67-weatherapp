@@ -8,26 +8,44 @@ import android.util.Log;
 import android.support.v4.app.FragmentManager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import android.support.v4.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
     public ViewPager ViewPager;
-    private ArrayList<Fragment> fragments;
+    public ArrayList<Fragment> fragments; // used to be private. need public to add tiles
 
-    private SlidingTabLayoutWeather slidingTabLayoutWeather;
-    private ViewPageAdapter ViewPageAdapter;
+    public SlidingTabLayoutWeather slidingTabLayoutWeather;
+    public ViewPageAdapter ViewPageAdapter; // used to be private. need public to add tiles
+    public HashMap bostonAddedTiles;
+    public HashMap homeAddedTiles; // aka hanover
 
+    public String sendTo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Bundle bundle = this.getIntent().getExtras();
+
+        if(bundle != null) {
+            HashMap checkedHashMap = (HashMap) bundle.getSerializable("checkedHashmap");
+            Log.d("hashmap mainactivity", checkedHashMap.toString());
+            sendTo = (String) bundle.getString("SEND_TO");
+            Log.d("sendTo mainactivity", sendTo);
+            if (sendTo.equals("hanover")){
+                homeAddedTiles = checkedHashMap;
+            } else if (sendTo.equals("boston")) {
+                bostonAddedTiles = checkedHashMap;
+            }
+
+        }
 
         ViewPager = (ViewPager) findViewById(R.id.viewpager);
         slidingTabLayoutWeather = (SlidingTabLayoutWeather) findViewById(R.id.tab);
-
-
 
 //        FragmentManager fm = getSupportFragmentManager();
 //        Fragment_Pager pagerAdapter = new Fragment_Pager(fm);
@@ -66,5 +84,6 @@ public class MainActivity extends AppCompatActivity {
             return POSITION_NONE;
         }
     }
+
 
 }

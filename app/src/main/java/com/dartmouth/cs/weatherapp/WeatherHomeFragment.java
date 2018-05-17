@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.ImageButton;
 import android.view.View.OnClickListener;
 import android.content.Intent;
+import android.util.Log;
+import java.util.HashMap;
 
 /**
  * Created by acaciah on 5/11/18.
@@ -21,8 +23,16 @@ public class WeatherHomeFragment extends Fragment {
     private ImageButton add_button;
     private Boolean hourly_expanded = false;
 
+    private ImageView clothing, radar, air;
+    private HashMap addedTiles;
+
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_weatherhome, container, false);
+
+        // get the added tiles from main activity
+        MainActivity activity = (MainActivity) getActivity();
+        addedTiles = activity.homeAddedTiles;
 
         ImageView title=(ImageView) rootView.findViewById(R.id.title); // image
         title.setImageResource(R.drawable.main_title_hanover);
@@ -66,16 +76,32 @@ public class WeatherHomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(view.getContext(), AddTilesActivity.class);
+                i.putExtra("SENT_FROM", "hanover");
                 startActivity(i);
             }
 
         });
 
+        radar= rootView.findViewById(R.id.home_radar); //image
 
+        if (addedTiles != null ){
+            // add custom tiles
+            if (addedTiles.containsKey("clothing")){
+                Log.d("weatherhomefrag", "clothing");
+            }
+            if (addedTiles.containsKey("radar")) {
+                Log.d("weatherhomefrag", "radar");
+                radar.setImageResource(R.drawable.tiles_radar);
+                radar.setAdjustViewBounds(true);
+            }
+            if (addedTiles.containsKey("air")) {
+                Log.d("weatherhomefrag", "air");
+
+            }
+        }
 
         return rootView;
     }
-
 
 
 }
