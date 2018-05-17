@@ -24,6 +24,7 @@ public class WeatherHomeFragment extends Fragment {
     private Boolean hourly_expanded = false;
 
     private ImageView clothing, radar, air;
+    private Boolean radar_expanded = false;
     private HashMap addedTiles;
 
 
@@ -86,21 +87,57 @@ public class WeatherHomeFragment extends Fragment {
         radar= rootView.findViewById(R.id.home_radar); //image
         air= rootView.findViewById(R.id.home_air); //image
 
+//        radar.setOnClickListener(new OnClickListener() {
+//
+//            @Override
+//            public void onClick(View view) {
+//                if (!hourly_expanded){
+//                    radar.setImageResource(R.drawable.main_radar_expanded);
+//                } else{
+//                    radar.setImageResource(R.drawable.main_radar);
+//                }
+//                radar.setAdjustViewBounds(true);
+//                radar_expanded=!radar_expanded;
+//            }
+//
+//        });
+
+
         if (addedTiles != null ){
             // add custom tiles
             if (addedTiles.containsKey("clothing")){
                 Log.d("weatherhomefrag", "clothing");
-                clothing.setImageResource(R.drawable.tiles_clothing);
+                clothing.setImageResource(R.drawable.main_clothing);
                 clothing.setAdjustViewBounds(true);
             }
             if (addedTiles.containsKey("radar")) {
                 Log.d("weatherhomefrag", "radar");
-                radar.setImageResource(R.drawable.tiles_radar);
+                radar.setImageResource(R.drawable.main_radar);
                 radar.setAdjustViewBounds(true);
+                radar.setOnClickListener(new OnClickListener() {
+
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("", "radar onclick");
+                        if (!radar_expanded){
+                            Log.d("", "radar onclick not expanded");
+                            radar.setImageResource(R.drawable.main_radar_expanded);
+                        } else{
+                            Log.d("", "radar onclick expanded");
+                            radar.setImageResource(R.drawable.main_radar);
+                        }
+                        radar.setAdjustViewBounds(true);
+                        radar_expanded=!radar_expanded;
+                    }
+
+                });
+
+
+
             }
             if (addedTiles.containsKey("air")) {
                 Log.d("weatherhomefrag", "air");
-                air.setImageResource(R.drawable.tiles_air);
+                air.setImageResource(R.drawable.main_air);
                 air.setAdjustViewBounds(true);
 
             }
