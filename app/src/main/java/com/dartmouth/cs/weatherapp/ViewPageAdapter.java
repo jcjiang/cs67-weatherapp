@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class ViewPageAdapter extends FragmentPagerAdapter{
 
-    private ArrayList<Fragment> fragments;
+    public ArrayList<Fragment> fragments; // made public to add tiles
     public ViewPageAdapter(FragmentManager fm, ArrayList<Fragment> fragments) {
         super(fm);
         this.fragments = fragments;
@@ -71,4 +71,6 @@ public class ViewPageAdapter extends FragmentPagerAdapter{
 
         return POSITION_NONE;
     }
+
+
 }

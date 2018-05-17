@@ -1,16 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@drawable/background">
-
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Yippee! You got to the add tiles page!"
-        android:textColor="#fff"
-        android:textSize="16pt"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:background="@drawable/background">
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/tiles_title"/>
+
+        <ImageButton
+            android:id="@+id/clothing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/clothing"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/title"
+            android:background="@null"
+            android:layout_marginBottom="10dp"
+            android:adjustViewBounds="true"
+            />
+
+        <CheckBox android:id="@+id/checkbox_clothing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_toRightOf="@id/clothing"
+            android:onClick="onCheckboxClicked" />
+
+        <ImageButton
+            android:id="@+id/radar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/radar"
+            android:layout_below="@+id/clothing"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@null"
+            android:adjustViewBounds="true"
+            />
+
+        <CheckBox android:id="@+id/checkbox_radar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/clothing"
+            android:layout_toRightOf="@id/radar"
+            android:onClick="onCheckboxClicked" />
+
+        <ImageButton
+            android:id="@+id/air"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/air"
+            android:layout_below="@+id/radar"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@null"
+            android:adjustViewBounds="true"
+            />
+
+        <CheckBox android:id="@+id/checkbox_air"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radar"
+            android:layout_toRightOf="@id/air"
+            android:onClick="onCheckboxClicked" />
+
+        <ImageButton
+            android:id="@+id/done"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/done"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/air"
+            android:layout_centerHorizontal="true"
+            android:background="@null"
+            android:layout_marginBottom="10dp"
+            android:adjustViewBounds="true" />
+
+    </RelativeLayout>
+</ScrollView>
