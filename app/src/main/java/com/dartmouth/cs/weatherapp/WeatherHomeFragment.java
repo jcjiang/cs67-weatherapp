@@ -87,21 +87,6 @@ public class WeatherHomeFragment extends Fragment {
         radar= rootView.findViewById(R.id.home_radar); //image
         air= rootView.findViewById(R.id.home_air); //image
 
-//        radar.setOnClickListener(new OnClickListener() {
-//
-//            @Override
-//            public void onClick(View view) {
-//                if (!hourly_expanded){
-//                    radar.setImageResource(R.drawable.main_radar_expanded);
-//                } else{
-//                    radar.setImageResource(R.drawable.main_radar);
-//                }
-//                radar.setAdjustViewBounds(true);
-//                radar_expanded=!radar_expanded;
-//            }
-//
-//        });
-
 
         if (addedTiles != null ){
             // add custom tiles

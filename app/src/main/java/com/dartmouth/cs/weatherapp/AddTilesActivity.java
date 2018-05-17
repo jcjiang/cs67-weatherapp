@@ -26,6 +26,8 @@ public class AddTilesActivity extends AppCompatActivity {
     private ImageButton air;
     private ImageButton done_button;
 
+    private Boolean clothing_expanded = false;
+
     private HashMap checkedHashMap;
 
     private String sent_from; // fragment the intent came from (aka boston or hanover)
@@ -39,31 +41,30 @@ public class AddTilesActivity extends AppCompatActivity {
 
         checkedHashMap = new HashMap();
         setImages();
-        // setCheckboxes();
 
         sent_from = getIntent().getStringExtra("SENT_FROM");
         Log.d("sent from", sent_from);
     }
-
-//    protected void onCreate(Bundle savedInstanceState);
-//
-//    protected void onStart();
-//
-//    protected void onRestart();
-//
-//    protected void onResume();
-//
-//    protected void onPause();
-//
-//    protected void onStop();
-//
-//    protected void onDestroy();
 
     public void setImages() {
 
         clothing= findViewById(R.id.clothing); //image
         clothing.setImageResource(R.drawable.tiles_clothing);
         clothing.setAdjustViewBounds(true);
+        clothing.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                if (!clothing_expanded){
+                    clothing.setImageResource(R.drawable.tiles_clothing_expanded);
+                } else{
+                    clothing.setImageResource(R.drawable.tiles_clothing);
+                }
+                clothing.setAdjustViewBounds(true);
+                clothing_expanded=!clothing_expanded;
+            }
+
+        });
 
         radar= findViewById(R.id.radar); //image
         radar.setImageResource(R.drawable.tiles_radar);
@@ -86,16 +87,8 @@ public class AddTilesActivity extends AppCompatActivity {
                 // send data from activity to fragment:
                 // https://stackoverflow.com/questions/12739909/send-data-from-activity-to-fragment-in-android
                 Bundle bundle = new Bundle();
-//                // bundle.putString("edttext");
-//
-//                // put hashmap in bundle https://stackoverflow.com/questions/11452859/android-hashmap-in-bundle
+              // put hashmap in bundle https://stackoverflow.com/questions/11452859/android-hashmap-in-bundle
                 bundle.putSerializable("checkedHashmap", checkedHashMap);
-                // set Fragmentclass Arguments
-
-
-//                Intent intent = Intent(this, MainActivity.class);
-//                startActivity(intent);
-//                finish();
 
                 if (sent_from.equals("hanover")){
                     Intent intent = new Intent(thisContext, MainActivity.class);
