@@ -5,6 +5,8 @@
     <string name="daily">daily</string>
     <string name="title">title</string>
     <string name="info">weather info</string>
-
-
+    <string name="clothing">clothing suggestion</string>
+    <string name="air">air quality</string>
+    <string name="radar">radar map</string>
+    <string name="done">done</string>
 </resources>
