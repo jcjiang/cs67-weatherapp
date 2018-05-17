@@ -22,6 +22,10 @@ public class WeatherBostonFragment extends Fragment {
     private Boolean hourly_expanded = false;
     private Boolean daily_expanded = false;
 
+    // private Boolean clothing_added;
+    // private Boolean radar_added;
+    // private Boolean air_added;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_weatherboston, container, false);
 

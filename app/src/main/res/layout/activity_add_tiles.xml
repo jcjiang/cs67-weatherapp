@@ -84,7 +84,6 @@
             android:layout_toRightOf="@id/air"
             android:onClick="onCheckboxClicked" />
 
-
         <ImageButton
             android:id="@+id/done"
             android:layout_width="fill_parent"
