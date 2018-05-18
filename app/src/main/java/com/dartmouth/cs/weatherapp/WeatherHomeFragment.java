@@ -1,5 +1,6 @@
 package com.dartmouth.cs.weatherapp;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -35,6 +36,8 @@ public class WeatherHomeFragment extends Fragment {
         // get the added tiles from main activity
         MainActivity activity = (MainActivity) getActivity();
         addedTiles = activity.homeAddedTiles;
+
+        Log.d("home", "oncreateview");
 
         ImageView title = (ImageView) rootView.findViewById(R.id.title); // image
         title.setImageResource(R.drawable.main_title_hanover);
@@ -102,24 +105,24 @@ public class WeatherHomeFragment extends Fragment {
         if (addedTiles != null) {
             // add custom tiles
             if (addedTiles.containsKey("clothing")) {
-                Log.d("weatherhomefrag", "clothing");
+                // Log.d("weatherhomefrag", "clothing");
                 clothing.setImageResource(R.drawable.main_clothing);
                 clothing.setAdjustViewBounds(true);
             }
             if (addedTiles.containsKey("radar")) {
-                Log.d("weatherhomefrag", "radar");
+                // Log.d("weatherhomefrag", "radar");
                 radar.setImageResource(R.drawable.main_radar);
                 radar.setAdjustViewBounds(true);
                 radar.setOnClickListener(new OnClickListener() {
 
                     @Override
                     public void onClick(View view) {
-                        Log.d("", "radar onclick");
+                        // Log.d("", "radar onclick");
                         if (!radar_expanded) {
-                            Log.d("", "radar onclick not expanded");
+                         //    Log.d("", "radar onclick not expanded");
                             radar.setImageResource(R.drawable.main_radar_expanded);
                         } else {
-                            Log.d("", "radar onclick expanded");
+                        //    Log.d("", "radar onclick expanded");
                             radar.setImageResource(R.drawable.main_radar);
                         }
                         radar.setAdjustViewBounds(true);
@@ -131,7 +134,7 @@ public class WeatherHomeFragment extends Fragment {
 
             }
             if (addedTiles.containsKey("air")) {
-                Log.d("weatherhomefrag", "air");
+                // Log.d("weatherhomefrag", "air");
                 air.setImageResource(R.drawable.main_air);
                 air.setAdjustViewBounds(true);
 
@@ -140,5 +143,24 @@ public class WeatherHomeFragment extends Fragment {
 
         return rootView;
     }
+
+
+
+//    public void onRestoreInstanceState(Bundle savedInstanceState) {
+//        if (savedInstanceState != null) {
+//            // Restore value of members from saved state
+//            Log.d("home onrestore", "");
+//            addedTiles = (HashMap) savedInstanceState.getSerializable("addTiles");
+//            Log.d("home onrestore", addedTiles.toString());
+//        }
+//    }
+//
+//    @Override
+//    public void onSaveInstanceState(Bundle savedInstanceState) {
+//        Log.d("weather home", "onsaveinstancestate");
+//        savedInstanceState.putSerializable("addTiles", addedTiles);
+//        // Always call the superclass so it can save the view hierarchy state
+//        super.onSaveInstanceState(savedInstanceState);
+//    }
 
 }

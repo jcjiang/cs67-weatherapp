@@ -77,6 +77,48 @@
             android:adjustViewBounds="true"
             />
 
+        <ImageView
+            android:id="@+id/boston_clothing"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/info"
+            android:layout_below="@+id/sun"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:adjustViewBounds="true"
+            />
+
+        <ImageView
+            android:id="@+id/boston_radar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/info"
+            android:layout_below="@id/boston_clothing"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:adjustViewBounds="true"
+            />
+
+        <ImageView
+            android:id="@+id/boston_air"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/info"
+            android:layout_below="@+id/boston_radar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:adjustViewBounds="true"
+            />
+
     </RelativeLayout>
 
 </ScrollView>
